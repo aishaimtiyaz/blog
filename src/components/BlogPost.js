@@ -12,7 +12,7 @@ const BlogPost = () => {
     }, [id]);
 
     const handleDelete = () => {
-        deletePost(id).then(() => navigate('/'));
+        deletePost(id).then(() => navigate('/dashboard'));
     };
 
     return (
@@ -26,7 +26,7 @@ const BlogPost = () => {
                     <Link to={`/edit/${post.id}`}>
                         <button>Edit</button>
                     </Link>
-                    <Link to="/">
+                    <Link to="/dashboard">
                         <button>Back to All Posts</button>
                     </Link>
                 </>

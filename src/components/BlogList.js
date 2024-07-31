@@ -22,6 +22,14 @@ const BlogList = () => {
                     </li>
                 ))}
             </ul>
+           
+            <Link to="/register">
+                <button>Register</button>
+            </Link>
+            <Link to="/login">
+                <button>Login</button>
+            </Link>
+
         </div>
     );
 };

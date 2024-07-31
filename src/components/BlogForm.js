@@ -8,6 +8,7 @@ const BlogForm = () => {
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
     const [author, setAuthor] = useState('');
+    console.log("id"+id);
 
     useEffect(() => {
         if (id) {
@@ -26,7 +27,7 @@ const BlogForm = () => {
         if (id) {
             updatePost(id, post).then(() => navigate(`/post/${id}`));
         } else {
-            createPost(post).then(() => navigate('/'));
+            createPost(post).then(() => navigate('/dashboard'));
         }
     };
 
