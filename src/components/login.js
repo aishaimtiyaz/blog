@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 
 const Login = ({ setUser }) => {
     const [username, setUsername] = useState('');
@@ -37,6 +37,9 @@ const Login = ({ setUser }) => {
                 <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" required />
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
                 <button type="submit">Login</button>
+                <Link to="/register">
+                <button>Register</button>
+            </Link>
             </form>
             {message && <p>{message}</p>}
         </div>
