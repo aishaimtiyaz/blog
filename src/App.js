@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BlogList from './components/BlogList';
+import BlogPost from './components/BlogPost';
+import BlogForm from './components/BlogForm';
+import './App.css'; // Import the CSS file
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<BlogList />} />
+                    <Route path="/post/:id" element={<BlogPost />} />
+                    <Route path="/create" element={<BlogForm />} />
+                    <Route path="/edit/:id" element={<BlogForm />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
 export default App;
